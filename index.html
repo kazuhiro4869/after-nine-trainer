@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#13241f">
+  <meta name="description" content="ジャグラーの着席・続行・見送りを、数字と理由で学ぶ無料の実戦判断トレーナー。">
+  <title>AFTER 9 — ジャグラー実戦判断トレーナー</title>
+  
+  <style>
+:root{
+  --ink:#17251f;--muted:#65736c;--subtle:#8a968e;--line:#dfe4dc;
+  --cream:#f6f7f2;--white:#fff;--dark:#13241f;--dark2:#1c3830;
+  --lime:#c5f38e;--green:#276b54;--peach:#f4bc9e;--amber:#e6a75b;
+  --shadow:0 22px 56px rgba(18,37,30,.07);
+  --radius:20px;--radius-sm:12px;
+  --font:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",Meiryo,sans-serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);font:15px/1.65 var(--font);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.48}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #e39a63;outline-offset:3px}.skip-link{position:absolute;left:10px;top:-80px;background:white;padding:12px;z-index:100}.skip-link:focus{top:10px}.shell{width:min(calc(100% - 60px),1160px);margin-inline:auto}.site-head{height:80px;background:var(--cream);position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(31,55,44,.075);backdrop-filter:blur(12px)}.head-inner{height:100%;display:flex;align-items:center;gap:36px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}.brand-mark{width:46px;height:46px;border-radius:13px;background:var(--dark);color:var(--lime);font:800 23px/46px Arial,sans-serif;text-align:center;letter-spacing:-3px}.brand-mark span{color:var(--peach)}.brand-text{display:flex;flex-direction:column;line-height:1.3;gap:4px}.brand-text strong{font:800 14px/1.1 Arial,sans-serif;letter-spacing:.16em}.brand-text small{color:var(--muted);font:700 9px/1.2 Arial,sans-serif;letter-spacing:.16em}.main-nav{display:flex;gap:8px;align-items:center;margin-left:auto}.nav-button,.head-share{background:transparent;border:0;color:#506359;font-weight:700;font-size:13px;padding:12px 15px;border-radius:10px;min-height:44px}.nav-button:hover,.nav-button.active{background:#e7eee3;color:var(--ink)}.head-share{display:flex;gap:8px;align-items:center;background:#e4ebdf;color:var(--ink);white-space:nowrap}.head-share:hover{background:#d7e7d0}.head-share svg{width:17px;height:17px}.mobile-nav{display:none}
+main{min-height:calc(100vh - 160px)}.page{padding:30px 0 80px}.hero{min-height:375px;background:var(--dark);color:white;position:relative;overflow:hidden;border-radius:26px;display:flex;justify-content:space-between}.hero-content{padding:53px 58px 53px;position:relative;z-index:2;max-width:710px}.eyebrow{display:flex;gap:9px;align-items:center;text-transform:uppercase;letter-spacing:.15em;font:750 11px/1.4 Arial,sans-serif}.eyebrow .dot{width:7px;height:7px;background:var(--lime);border-radius:50%}.hero .eyebrow{color:var(--lime)}.hero h1{font-weight:820;font-size:clamp(36px,4.5vw,59px);line-height:1.25;letter-spacing:-.065em;margin:24px 0 16px}.hero h1 em{font-style:normal;color:var(--lime)}.hero p{max-width:510px;font-size:15px;line-height:1.85;color:#cbd9cf;margin:0}.hero-cta{display:flex;align-items:center;gap:17px;margin-top:28px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:12px;font-weight:800;font-size:14px;min-height:50px;padding:11px 22px;text-decoration:none;transition:transform .16s ease,background .16s ease,box-shadow .16s ease}.button:hover:not(:disabled){transform:translateY(-1px)}.button-primary{background:var(--lime);color:var(--dark)}.button-primary:hover:not(:disabled){background:#d5fca8}.button-dark{background:var(--dark);color:white}.button-dark:hover:not(:disabled){background:var(--dark2)}.button-outline{background:white;border:1px solid var(--line);color:var(--ink)}.button-outline:hover:not(:disabled){background:#f0f4ee}.button-plain{background:transparent;color:var(--muted)}.arrow{font:800 20px/1 Arial,sans-serif}.hero-note{font-size:12px;color:#b4c9b9}.hero-visual{position:absolute;right:0;top:0;bottom:0;width:46%;overflow:hidden;pointer-events:none;background:radial-gradient(circle at 72% 50%,rgba(159,237,120,.15),transparent 53%)}.visual-circle{width:280px;height:280px;position:absolute;right:40px;top:32px;border:1px solid rgba(180,245,166,.26);border-radius:50%;display:flex;justify-content:center;align-items:center;box-shadow:0 0 0 36px rgba(179,242,155,.035),0 0 0 85px rgba(179,242,155,.022)}.visual-circle:before{content:"";position:absolute;inset:25px;border:1px dashed rgba(194,246,144,.34);border-radius:50%}.visual-number{color:var(--lime);font:800 116px/1 Arial,sans-serif;letter-spacing:-.14em;margin-right:12px;opacity:.9}.visual-caption{position:absolute;bottom:40px;right:35px;color:#abc9ba;letter-spacing:.22em;font:700 11px/1.8 Arial,sans-serif;text-align:right}.visual-tick{position:absolute;background:var(--lime);width:9px;height:9px;border-radius:2px;transform:rotate(45deg);right:78px;top:48px}.visual-dots{position:absolute;inset:0;opacity:.28;background-image:radial-gradient(#a8cdb5 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(to left,black,transparent)}
+.overview{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:28px;margin-top:34px;align-items:start}.section-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:18px}.section-top h2{font-size:20px;letter-spacing:-.035em;margin:0}.section-top .micro{font:700 11px/1.5 Arial,sans-serif;letter-spacing:.12em;color:var(--subtle)}.mode-list{display:grid;gap:12px}.mode-card{width:100%;text-align:left;background:white;border:1px solid #e1e6de;border-radius:17px;padding:23px 25px;display:flex;gap:18px;align-items:center;box-shadow:0 2px 4px rgba(26,49,32,.015);transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}.mode-card:hover{border-color:#9ac3a7;box-shadow:var(--shadow);transform:translateY(-2px)}.mode-number{font:800 29px/1 Arial,sans-serif;letter-spacing:-.05em;color:#cad5cb;min-width:36px}.mode-icon{height:44px;width:44px;border-radius:12px;background:#eff6e8;display:grid;place-items:center;font:750 18px Arial,sans-serif;color:#47765d;flex-shrink:0}.mode-copy{flex:1;min-width:0}.mode-copy strong{font-size:17px;display:block;line-height:1.45;letter-spacing:-.02em}.mode-copy span{font-size:12px;color:var(--muted)}.mode-extra{display:flex;flex-direction:column;text-align:right;gap:8px;align-items:flex-end}.mode-count{font:800 12px/1 Arial,sans-serif;color:#788b7d}.mode-arrow{font:700 19px/1 Arial,sans-serif;color:var(--green)}.sidebar-card{background:#e8eee6;border-radius:20px;padding:27px}.sidebar-head{font-size:12px;font-weight:850;letter-spacing:.04em;display:flex;justify-content:space-between}.sidebar-head span:last-child{font:700 10px/1.2 Arial;color:#70847a;letter-spacing:.15em}.progress-score{display:flex;gap:7px;align-items:baseline;margin-top:18px}.progress-score strong{font:800 53px/1 Arial,sans-serif;letter-spacing:-.06em}.progress-score span{color:var(--muted);font-weight:700}.track{background:#d3dfd2;border-radius:8px;overflow:hidden;height:8px;margin:18px 0}.track>span{display:block;height:100%;background:var(--green);border-radius:8px;transition:width .24s ease}.sidebar-sub{font-size:12px;color:var(--muted);line-height:1.8}.sidebar-rule{height:1px;background:#cbd7ca;margin:21px 0}.sidebar-big{font-size:24px;font-weight:850;letter-spacing:-.035em}.sidebar-small{font-size:11px;color:#687d70}.side-footer-link{display:inline-flex;margin-top:18px;gap:6px;align-items:center;font-weight:750;font-size:12px;background:none;border:0;color:var(--green);padding:10px 0;min-height:44px}.intro-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:28px;padding:24px 4px}.intro-item{display:flex;gap:11px;align-items:flex-start}.intro-star{color:var(--green);font-size:22px;line-height:1}.intro-item strong{font-size:12px;display:block}.intro-item p{font-size:11px;color:var(--muted);margin:4px 0 0;line-height:1.75}
+/* Quiz */
+.quiz-shell{max-width:1000px;margin:0 auto}.quiz-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:19px}.back{border:0;background:transparent;font-weight:750;font-size:12px;color:var(--muted);padding:11px 0;min-height:44px}.back:hover{color:var(--ink)}.step-count{font:750 12px Arial,sans-serif;letter-spacing:.08em;color:var(--muted)}.step-count strong{color:var(--ink)}.quiz-progress{height:5px;background:#e1e8df;border-radius:6px;overflow:hidden;margin-bottom:23px}.quiz-progress>span{height:100%;display:block;background:#5ba37b;transition:width .2s ease;border-radius:6px}.quiz-two-col{display:grid;grid-template-columns:minmax(0,1.09fr) minmax(320px,.91fr);gap:25px;align-items:start}.quiz-two-col.single{display:block;max-width:830px;margin:0 auto}.quiz-visual{background:var(--dark);color:#fff;border-radius:21px;overflow:hidden;position:relative;min-height:415px}.quiz-visual:before{content:"";position:absolute;width:270px;height:270px;border:1px solid rgba(195,249,162,.16);border-radius:50%;top:-145px;right:-80px;box-shadow:0 0 0 27px rgba(191,237,154,.04),0 0 0 63px rgba(191,237,154,.025)}.quiz-visual-inner{position:relative;padding:30px}.game-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.machine-tag{font:800 10px/1 Arial,sans-serif;letter-spacing:.16em;color:var(--lime);border:1px solid rgba(195,243,142,.34);padding:8px 10px;border-radius:5px}.time-pill{color:#d8e5d8;font:750 11px/1.2 Arial,sans-serif;letter-spacing:.03em}.machine-name{font-size:22px;line-height:1.45;font-weight:850;letter-spacing:-.035em;margin:25px 0 1px}.data-caption{font:700 10px Arial,sans-serif;letter-spacing:.16em;color:#a9c5b6;text-transform:uppercase}.game-number{font:850 clamp(52px,6vw,78px)/1.05 Arial,sans-serif;letter-spacing:-.055em;margin:15px 0 25px}.game-number span{font-size:21px;color:#acc5b3;letter-spacing:0;margin-left:8px}.data-separator{height:1px;background:#3e5249}.rate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:24px}.rate-block{padding:0 14px;border-right:1px solid #345047}.rate-block:first-child{padding-left:0}.rate-block:last-child{border-right:0;padding-right:0}.rate-label{font:800 11px Arial,sans-serif;letter-spacing:.08em;color:#b6c7bd}.rate-value{font:800 25px/1.2 Arial,sans-serif;letter-spacing:-.02em;margin:7px 0 1px}.rate-value span{font-size:11px;color:#a9c8b4;font-weight:650}.rate-sub{font-size:11px;color:#a6bdaf}.timeline-note{margin-top:30px;color:#b8cabd;font-size:12px;line-height:1.8}.timeline-note strong{color:var(--lime)}.machine-neo .machine-tag{color:#ffd4a2;border-color:rgba(255,210,154,.32)}.machine-neo .timeline-note strong{color:#ffd4a2}.machine-gogo .machine-tag{color:#ffd1c0;border-color:rgba(255,209,192,.32)}.machine-gogo .timeline-note strong{color:#ffd1c0}.delta-bar{margin-top:20px;display:flex;flex-wrap:wrap;gap:7px}.delta-bar span{font:750 11px Arial,sans-serif;color:#d3f2d5;background:#335046;border-radius:7px;padding:8px 10px}.wallet-strip{margin-top:18px;padding:14px 0 0;border-top:1px solid #354f42;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}.wallet-strip small{display:block;color:#adc4b3;font-size:10px}.wallet-strip strong{display:block;font:750 14px/1.6 Arial,sans-serif;letter-spacing:.01em;color:white}.wallet-strip strong.negative{color:#ffb8a4}.wallet-strip strong.positive{color:#c6f38e}.answer-panel{background:#fff;border:1px solid #e2e8de;border-radius:21px;padding:28px}.question-eyebrow{font:800 11px/1.4 Arial,sans-serif;color:var(--green);letter-spacing:.13em;text-transform:uppercase}.answer-panel h2{font-size:25px;line-height:1.4;letter-spacing:-.05em;margin:14px 0 10px}.question-description{color:var(--muted);font-size:13px;line-height:1.8;margin:0 0 24px}.answer-label{font-size:12px;font-weight:800;margin:21px 0 10px}.option-stack{display:grid;gap:8px}.option-button{width:100%;display:flex;align-items:center;gap:13px;text-align:left;min-height:58px;padding:10px 14px;border-radius:11px;background:#fafbf8;border:1.5px solid #e4e9e1;color:var(--ink);transition:border-color .14s ease,background .14s ease,transform .14s ease}.option-button:hover{border-color:#aac7ad}.option-button.selected{border-color:#3b8a65;background:#ebf6e7}.option-symbol{font:850 17px Arial,sans-serif;width:32px;height:32px;background:#ebf0e9;border-radius:8px;display:grid;place-items:center;color:#466c54;flex-shrink:0}.option-button.selected .option-symbol{background:var(--green);color:white}.option-copy strong{font-size:14px;display:block}.option-copy small{font-size:11px;color:var(--muted);display:block}.reason-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.reason-chip{border-radius:8px;background:#f9fbf8;border:1px solid #e3eae2;color:#57675e;padding:11px 9px;font-size:11px;font-weight:750;text-align:center;min-height:44px}.reason-chip.selected{background:#e8f4e1;color:#22503e;border-color:#5da57a}.answer-submit{margin-top:23px;width:100%;min-height:55px}.quick-hint{font-size:11px;color:var(--subtle);line-height:1.6;margin:13px 0 0;text-align:center}.quiz-title{font-size:20px;font-weight:850;letter-spacing:-.04em;margin:0 0 18px}.stage-strip{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:18px;color:var(--muted);font-size:12px}.stage-pill{background:#e6f0e5;color:var(--green);padding:5px 10px;border-radius:999px;font:800 11px/1.4 Arial,sans-serif}.compare-wrapper{background:#fff;border:1px solid #e2e8de;border-radius:21px;padding:28px}.compare-head{margin:0 0 24px}.compare-head h2{font-size:24px;letter-spacing:-.04em;margin:9px 0 5px}.compare-head p{margin:0;color:var(--muted);font-size:13px}.compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.compare-card{width:100%;text-align:left;background:#fcfdfb;border:1.5px solid #e3e9e0;border-radius:15px;display:block;padding:18px 17px;min-height:225px}.compare-card:hover{border-color:#91b69e}.compare-card.selected{border-color:#387c5c;background:#edf7e8}.compare-card-head{display:flex;justify-content:space-between;align-items:center;gap:5px}.candidate-letter{background:#e1ebe0;width:28px;height:28px;display:grid;place-items:center;font:850 13px Arial,sans-serif;border-radius:7px}.candidate-machine{font-size:12px;font-weight:800;margin-top:17px;line-height:1.5;min-height:36px}.candidate-g{font:850 25px Arial,sans-serif;letter-spacing:-.02em;margin-top:2px}.candidate-g span{font-size:12px;color:var(--muted);font-weight:700;margin-left:5px}.candidate-nums{display:flex;gap:6px;margin-top:15px;font:750 12px Arial,sans-serif;color:#466351}.candidate-nums span{background:#eaf0e8;padding:5px 7px;border-radius:6px}.candidate-rates{margin-top:11px;color:var(--muted);font-size:11px;line-height:1.8}.compare-controls{border-top:1px solid var(--line);margin-top:23px;padding-top:21px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.85fr);gap:24px}.skip-button{background:transparent;border:1px solid #cfd9cb;padding:12px 14px;border-radius:10px;font-weight:800;font-size:12px;min-height:44px}.skip-button.selected{background:#e9f5e6;border-color:var(--green);color:var(--green)}.compare-actions{display:flex;flex-direction:column;gap:9px}.compare-submit{width:100%}
+/* Feedback */
+.feedback-shell{max-width:1000px;margin:0 auto}.feedback-banner{display:flex;gap:18px;align-items:flex-start;background:var(--dark);border-radius:20px;padding:29px 32px;color:white;position:relative;overflow:hidden}.feedback-banner:after{content:"";position:absolute;border:1px solid rgba(202,241,156,.15);width:300px;height:300px;border-radius:50%;right:-110px;top:-160px;pointer-events:none}.feedback-symbol{display:grid;place-items:center;width:47px;height:47px;border-radius:14px;background:#3f7454;color:var(--lime);font:800 24px Arial,sans-serif;flex-shrink:0}.feedback-banner h2{font-size:23px;line-height:1.3;margin:4px 0 11px;letter-spacing:-.04em}.feedback-banner p{margin:0;font-size:13px;color:#bfd0c3;line-height:1.8;max-width:640px}.feedback-banner .eyebrow{font-size:10px;color:var(--lime)}.feedback-layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:20px;margin-top:20px}.paper-card{background:white;border:1px solid #e2e8de;border-radius:17px;padding:27px}.card-kicker{font:750 10px Arial,sans-serif;letter-spacing:.16em;color:var(--green)}.paper-card h3{margin:9px 0 15px;font-size:19px;letter-spacing:-.04em}.paper-card p{font-size:13px;color:#45564d;line-height:1.95;margin:0 0 16px}.feedback-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice-summary{background:#f3f6f1;border-radius:11px;padding:13px}.choice-summary small{font-size:10px;color:var(--muted);display:block}.choice-summary strong{display:block;font-size:17px;line-height:1.5;margin-top:4px}.insight{display:flex;gap:10px;padding:13px 0;border-bottom:1px solid #edf0ec}.insight:last-child{border-bottom:0}.insight-mark{font:850 15px Arial,sans-serif;color:var(--green)}.insight span{font-size:12px;color:#54645a;line-height:1.8}.model-note{font-size:11px!important;color:#87968a!important;line-height:1.7!important}.prior-toggle{display:flex;gap:5px;border:1px solid #dce5dc;border-radius:9px;padding:4px;width:max-content;max-width:100%;flex-wrap:wrap;background:#f7faf5;margin-bottom:18px}.prior-toggle button{font:800 11px var(--font);color:#708077;border:0;background:transparent;border-radius:6px;min-height:36px;padding:6px 10px}.prior-toggle button.active{background:var(--dark);color:white}.model-overview{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-end;margin:16px 0 17px}.model-big small{display:block;color:var(--muted);font-size:10px}.model-big strong{font:800 30px/1.3 Arial,sans-serif;letter-spacing:-.04em}.model-big strong span{font-size:14px}.model-big .hint{font-size:9px;display:block;color:var(--muted)}.posterior-row{display:flex;align-items:center;gap:10px;margin:8px 0}.posterior-label{min-width:36px;font:800 12px Arial,sans-serif}.posterior-track{flex:1;height:9px;border-radius:9px;background:#edf0ea;overflow:hidden}.posterior-track span{height:100%;display:block;border-radius:9px;background:#b3bfb2}.posterior-row.high .posterior-track span{background:#64a27f}.posterior-pct{min-width:45px;text-align:right;font:750 12px Arial,sans-serif;color:#58665d}.model-box{background:#f2f7ef;border:1px solid #e0eadb;padding:16px;border-radius:12px;margin-top:16px;color:#43574a;font-size:12px;line-height:1.85}.feedback-next{display:flex;justify-content:space-between;gap:13px;align-items:center;margin-top:22px}.feedback-next-note{color:var(--muted);font-size:11px;max-width:390px}.model-table{width:100%;border-collapse:collapse;font-size:12px;margin:12px 0}.model-table th,.model-table td{text-align:right;padding:11px 6px;border-bottom:1px solid #e8ece6;white-space:nowrap}.model-table th:first-child,.model-table td:first-child{text-align:left}.model-table th{color:var(--muted);font-size:11px}.model-table tr.highlight td{background:#eaf4e6;font-weight:800}.comparison-feedback{grid-column:1 / -1}.feedback-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+/* Info pages */
+.interior-head{margin:18px 0 30px}.interior-eyebrow{font:800 11px Arial,sans-serif;letter-spacing:.16em;color:var(--green)}.interior-head h1{font-size:clamp(29px,4vw,44px);line-height:1.3;letter-spacing:-.055em;margin:12px 0}.interior-head p{max-width:650px;font-size:14px;color:var(--muted);margin:0;line-height:1.9}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.info-card{background:white;border:1px solid var(--line);border-radius:17px;padding:28px}.info-card.full{grid-column:1/-1}.info-card .index{font:850 11px Arial,sans-serif;color:var(--green);letter-spacing:.14em}.info-card h2{font-size:20px;line-height:1.45;margin:14px 0}.info-card p,.info-card li{font-size:13px;color:#54625a;line-height:1.9}.info-card ul{padding-left:20px}.source-links{display:grid;gap:10px;margin-top:14px}.source-link{display:flex;align-items:center;gap:11px;background:#f5f8f2;padding:13px 14px;border-radius:10px;text-decoration:none;font-weight:750;font-size:12px;justify-content:space-between}.source-link:hover{text-decoration:underline}.source-link span{color:var(--green)}.formula{display:block;background:#edf4e8;border-radius:10px;padding:15px;white-space:normal;font:750 12px/1.9 Arial,sans-serif;word-break:break-word}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}.stat-tile{background:#fff;border:1px solid var(--line);padding:20px 21px;border-radius:15px}.stat-tile small{font-size:11px;color:var(--muted);display:block;margin-bottom:8px}.stat-tile strong{font:800 32px/1.1 Arial,sans-serif;letter-spacing:-.035em}.stats-details{display:grid;grid-template-columns:1fr 1fr;gap:20px}.stats-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid var(--line)}.stats-row:last-child{border-bottom:0}.stats-row strong{font-size:13px}.stats-row span{font:800 13px Arial,sans-serif;color:var(--green)}.results-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}.note-banner{border-left:3px solid #6a987a;background:#ecf2e8;border-radius:0 11px 11px 0;padding:15px 20px;font-size:12px;color:#536c58;line-height:1.9;margin-top:24px}.empty-icon{height:60px;width:60px;border-radius:18px;background:#edf4e8;color:var(--green);font:850 30px Arial,sans-serif;display:grid;place-items:center;margin-bottom:14px}.finish-wrap{max-width:700px;margin:20px auto;text-align:center;background:white;border:1px solid var(--line);border-radius:23px;padding:56px 28px}.finish-symbol{width:86px;height:86px;margin:0 auto 25px;border:1px solid #bfd8b8;border-radius:50%;display:grid;place-items:center;background:#ebf6e7;color:var(--green);font:900 35px Arial,sans-serif}.finish-wrap h1{font-size:30px;letter-spacing:-.05em}.finish-wrap p{color:var(--muted);font-size:13px;line-height:1.9}.finish-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:var(--dark);color:white;padding:12px 20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.2);z-index:110;font-size:13px;max-width:min(420px,calc(100% - 36px));text-align:center}.site-foot{border-top:1px solid #e0e6df;padding:24px 0}.foot-inner{display:flex;justify-content:space-between;gap:20px;font-size:10px;color:#87938a}.foot-inner>span:first-child{font:750 10px Arial,sans-serif;letter-spacing:.1em}.foot-dot{color:#74ad78;padding:0 8px}
+@media(max-width:1050px){.hero-content{max-width:660px}.hero-visual{opacity:.7}.quiz-two-col{grid-template-columns:minmax(0,1fr) minmax(310px,.86fr)}}
+@media(max-width:780px){.shell{width:min(calc(100% - 32px),1160px)}.site-head{height:68px}.brand-mark{width:42px;height:42px;line-height:42px}.main-nav{display:none}.head-share{margin-left:auto}.page{padding-top:16px}.hero{min-height:390px}.hero-content{padding:38px 27px}.hero h1{font-size:clamp(37px,7vw,52px)}.hero-visual{width:75%;right:-25%;opacity:.38}.hero-note{font-size:10px}.overview{grid-template-columns:1fr;gap:16px;margin-top:27px}.sidebar-card{grid-row:auto}.intro-strip{gap:14px;grid-template-columns:1fr 1fr}.quiz-two-col,.feedback-layout,.feedback-compare-grid{grid-template-columns:1fr}.quiz-visual{min-height:0}.quiz-visual-inner{padding:26px}.feedback-layout{gap:12px}.compare-controls{grid-template-columns:1fr}.compare-grid{gap:8px}.compare-card{padding:15px 10px;min-height:214px}.candidate-machine{font-size:11px}.candidate-g{font-size:21px}.candidate-nums{flex-wrap:wrap;font-size:11px}.stats-grid{grid-template-columns:1fr 1fr}.stats-details{grid-template-columns:1fr}.feedback-next{flex-direction:column;align-items:stretch}.feedback-next .button{width:100%}.feedback-next-note{max-width:none;text-align:center}.site-foot{padding-bottom:90px}.mobile-nav{position:fixed;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(3,1fr);background:rgba(249,250,246,.96);backdrop-filter:blur(16px);padding:8px 14px calc(8px + env(safe-area-inset-bottom));border-top:1px solid #dce5da;z-index:50}.mobile-nav button{border:0;background:none;min-height:46px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;color:#607368;font-size:10px;font-weight:750;border-radius:8px}.mobile-nav button.active{color:#2c7455;background:#e4f0e0}.mobile-nav-icon{font:800 22px/1.1 Arial,sans-serif}}
+@media(max-width:480px){.shell{width:calc(100% - 26px)}.brand-text strong{font-size:12px}.brand-text small{font-size:7.5px}.head-share{min-width:44px;justify-content:center;padding:10px}.head-share span{display:none}.hero{border-radius:19px;min-height:391px}.hero-content{padding:34px 23px}.hero h1{font-size:38px;line-height:1.32;margin:24px 0 13px}.hero p{font-size:13px}.hero-cta{gap:12px;margin-top:25px}.hero-cta .button{width:100%}.hero-note{display:none}.overview{margin-top:24px}.mode-card{padding:19px 15px;gap:10px}.mode-number{font-size:24px;min-width:28px}.mode-icon{display:none}.mode-copy strong{font-size:15px}.mode-copy span{font-size:11px}.mode-count{font-size:10px}.sidebar-card{padding:20px}.progress-score strong{font-size:39px}.sidebar-rule{margin:12px 0}.intro-strip{grid-template-columns:1fr;padding:20px 4px;gap:16px}.quiz-top{margin:0 0 13px}.quiz-progress{margin-bottom:14px}.quiz-title{font-size:18px}.quiz-visual,.answer-panel,.compare-wrapper,.paper-card{border-radius:15px}.quiz-visual-inner{padding:22px}.machine-name{font-size:19px;margin-top:20px}.game-number{font-size:57px;margin:12px 0 20px}.rate-grid{margin-top:19px}.rate-block{padding:0 7px}.rate-value{font-size:22px}.rate-label{font-size:10px}.rate-sub{font-size:10px}.timeline-note{margin-top:22px}.wallet-strip{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.wallet-strip strong{font-size:11px;overflow-wrap:anywhere}.answer-panel{padding:22px 18px}.answer-panel h2{font-size:22px}.reason-grid{grid-template-columns:1fr 1fr}.reason-chip{font-size:10.5px;padding:9px 5px}.question-description{font-size:12px}.compare-wrapper{padding:20px 13px}.compare-head h2{font-size:20px}.compare-grid{grid-template-columns:1fr}.compare-card{min-height:auto;display:grid;grid-template-columns:30px 1fr 88px;gap:3px 10px;padding:11px 13px}.compare-card-head{grid-column:1;grid-row:1 / 4;align-self:center}.candidate-machine{grid-column:2;grid-row:1;margin:0;min-height:0}.candidate-g{grid-column:2;grid-row:2;margin:0;font-size:21px}.candidate-nums{grid-column:3;grid-row:1 / 3;margin:0;justify-content:flex-end;align-content:center}.candidate-rates{grid-column:2 / 4;grid-row:3;margin-top:3px}.compare-controls{gap:10px}.feedback-banner{padding:22px 19px;gap:12px;border-radius:15px}.feedback-symbol{height:40px;width:40px;flex-basis:40px}.feedback-banner h2{font-size:20px}.feedback-banner p{font-size:12px}.paper-card{padding:21px 18px}.model-overview{gap:14px}.model-big strong{font-size:26px}.info-grid{grid-template-columns:1fr}.info-card{padding:23px 20px}.info-card.full{grid-column:1}.interior-head{margin:16px 0 22px}.interior-head h1{font-size:33px}.stat-tile{padding:17px}.stat-tile strong{font-size:26px}.foot-inner{flex-direction:column;gap:5px}.finish-wrap{padding:40px 19px}.finish-wrap h1{font-size:26px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition-duration:0s!important}}
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#app">本文へスキップ</a>
+  <header class="site-head">
+    <div class="shell head-inner">
+      <a href="#home" class="brand" data-action="home" aria-label="AFTER 9 ホームへ">
+        <span class="brand-mark" aria-hidden="true">A<span>9</span></span>
+        <span class="brand-text"><strong>AFTER NINE</strong><small>JUGGLER DECISION TRAINER</small></span>
+      </a>
+      <nav class="main-nav" aria-label="メインナビゲーション">
+        <button class="nav-button" type="button" data-action="home">ホーム</button>
+        <button class="nav-button" type="button" data-action="learn">学び方</button>
+        <button class="nav-button" type="button" data-action="results">学習記録</button>
+      </nav>
+      <button class="head-share" type="button" data-action="share" aria-label="このサイトを共有する">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 16V3m0 0L7.5 7.5M12 3l4.5 4.5M5 13v6a2 2 0 002 2h10a2 2 0 002-2v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>共有</span>
+      </button>
+    </div>
+  </header>
+  <main id="app" tabindex="-1" aria-live="polite"></main>
+  <div id="toast" role="status" aria-live="polite" class="toast" hidden></div>
+  <nav class="mobile-nav" aria-label="モバイルナビゲーション">
+    <button type="button" data-action="home"><span class="mobile-nav-icon" aria-hidden="true">⌂</span><span>ホーム</span></button>
+    <button type="button" data-action="learn"><span class="mobile-nav-icon" aria-hidden="true">≡</span><span>学び方</span></button>
+    <button type="button" data-action="results"><span class="mobile-nav-icon" aria-hidden="true">▥</span><span>記録</span></button>
+  </nav>
+  <footer class="site-foot">
+    <div class="shell foot-inner"><span>AFTER NINE <span class="foot-dot">•</span> TRAIN THE DECISION, NOT THE LUCK.</span><span>独立した学習用プロトタイプ。メーカー非公式。</span></div>
+  </footer>
+  <script>
+/*
+ * JUDGE 21 / 教材データ
+ * 全件架空データ。実在の設定・来店・収支を示すものではありません。
+ * 機種別スペック：北電子公式サイト（2026-10 確認）
+ */
+const SPECS = {
+  my: {
+    name: 'マイジャグラーV', short: 'MY V', accent: 'mint',
+    bb: [273.1, 270.8, 266.4, 254.0, 240.1, 229.1],
+    rb: [409.6, 385.5, 336.1, 290.0, 268.6, 229.1],
+    payout: [97.0, 98.0, 99.9, 102.8, 105.3, 109.4],
+    url: 'https://www.kitadenshi.co.jp/slot/myjuggler5/'
+  },
+  neo: {
+    name: 'ネオアイムジャグラーEX', short: 'NEO IM', accent: 'amber',
+    bb: [273.1, 269.7, 269.7, 259.0, 259.0, 255.0],
+    rb: [439.8, 399.6, 331.0, 315.1, 255.0, 255.0],
+    payout: [97.0, 98.0, 99.5, 101.1, 103.3, 105.5],
+    url: 'https://www.kitadenshi.co.jp/slot/neoimjugglerex/'
+  },
+  gogo: {
+    name: 'ゴーゴージャグラー3', short: 'GO GO 3', accent: 'rose',
+    bb: [259.0, 258.0, 257.0, 254.0, 247.3, 234.9],
+    rb: [354.2, 332.7, 306.2, 268.6, 247.3, 234.9],
+    payout: [97.2, 98.2, 99.4, 101.6, 103.8, 106.5],
+    url: 'https://www.kitadenshi.co.jp/slot/gogojuggler3/'
+  }
+};
+
+const REASONS = [
+  {id:'rb', label:'REGの設定差'},
+  {id:'balance', label:'BB・合算のバランス'},
+  {id:'sample', label:'総Gと試行回数'},
+  {id:'rate', label:'機種ごとの出玉率'},
+  {id:'time', label:'残り時間・移動コスト'},
+  {id:'risk', label:'損失リスク・資金管理'}
+];
+
+const SEAT_CASES = [
+  {id:'s01',machine:'my',g:4250,bb:17,rb:17,at:'20:55', stance:'yes',reasons:['rb','balance'],title:'きれいなボーナスバランス',
+   lesson:'REG・BBともに約1/250。マイジャグVでは両方に設定差があり、4,000G超の履歴は有力な検討材料。高設定確定ではなく、低設定の上振れも残る。'},
+  {id:'s02',machine:'neo',g:5600,bb:27,rb:17,at:'20:55',stance:'no',reasons:['rb','rate'],title:'BIGが先行するアイム',
+   lesson:'ネオアイムのBB設定差は小さく、BIGの多さをREGの弱さの埋め合わせとして扱いすぎない。1/329のREGは5・6を強く示す数字ではない。'},
+  {id:'s03',machine:'gogo',g:2450,bb:9,rb:11,at:'20:55',stance:'yes',reasons:['rb','sample'],title:'REG先行のゴージャグ',
+   lesson:'REG約1/223は良好で、BBの弱さも大きな欠損ではない。2,450Gとまだ揺れやすいが、ゴージャグの高設定候補として検討できる。'},
+  {id:'s04',machine:'my',g:6200,bb:19,rb:24,at:'20:55',stance:'maybe',reasons:['balance','rb'],title:'REGは強いがBIGが弱い',
+   lesson:'REG約1/258は強い一方、BB約1/326、合算約1/144は物足りない。低設定と決めつけず、時間効率や別候補との比較で判断が分かれる。'},
+  {id:'s05',machine:'neo',g:1350,bb:7,rb:8,at:'20:55',stance:'yes',reasons:['rb','sample'],title:'短い履歴でも突出している',
+   lesson:'REG約1/169、合算1/90は目立つ。ただし1,350Gでは誤爆も十分あり得る。短い履歴の例外候補として、強さと不確実性を両方考える。'},
+  {id:'s06',machine:'my',g:3100,bb:18,rb:7,at:'20:55',stance:'no',reasons:['rb','balance'],title:'BIGだけで伸びた台',
+   lesson:'BB約1/172は強烈でもREG約1/443。マイジャグVではREGの設定差が大きく、BB先行だけで高設定と評価するのは危険。'},
+  {id:'s07',machine:'gogo',g:5000,bb:23,rb:20,at:'20:55',stance:'yes',reasons:['rb','balance'],title:'十分に回ったゴージャグ',
+   lesson:'REG約1/250で、BB・合算も良好。設定4・5・6を検討できる。ただし設定5と6のBB/RB比率や設定配分は分けて考える。'},
+  {id:'s08',machine:'neo',g:4700,bb:15,rb:20,at:'20:55',stance:'yes',reasons:['rb','sample'],title:'地味な見た目のREG先行',
+   lesson:'REG約1/235はネオアイムの5・6公表値を上回る。BBがやや弱くても、高設定の可能性を残す重要な情報になる。'},
+  {id:'s09',machine:'gogo',g:2200,bb:12,rb:4,at:'20:55',stance:'no',reasons:['rb','balance'],title:'BIGが強い、REGが足りない',
+   lesson:'REG1/550は、BBが良くても高設定の積極的根拠にはなりにくい。設定差の異なるBB・REGを一緒くたに評価しない。'},
+  {id:'s10',machine:'my',g:5200,bb:18,rb:20,at:'20:55',stance:'yes',reasons:['rb','sample'],title:'REGを根拠に拾うマイ',
+   lesson:'REG1/260は5に近い。BB約1/289は弱めで、設定5確定ではないが、5,000G超のREGを無視するのも不合理。'},
+  {id:'s11',machine:'neo',g:2650,bb:13,rb:6,at:'20:55',stance:'no',reasons:['rb','balance'],title:'合算の良さに惑わされない',
+   lesson:'BB約1/204は良いがREG約1/442。ネオアイムではBBだけで高設定を示しにくい。合算の見た目だけでは足りない。'},
+  {id:'s12',machine:'gogo',g:1500,bb:6,rb:8,at:'20:55',stance:'maybe',reasons:['sample','rb'],title:'強いがサンプル不足',
+   lesson:'REG1/188と合算1/107は優秀。ただし1,500Gの履歴では高設定と低設定の上振れの識別が難しい。状況次第で着席・見送りの両方に理由がある。'}
+];
+
+const PROGRESS_CASES = [
+ {id:'p01',machine:'my', title:'650Gの不発をどう受け止める？',reasons:['rb','sample','time'],stages:[
+   {at:'20:55',g:3800,bb:16,rb:17,stance:'yes',lesson:'スタート時点はREG約1/224。マイVの高設定候補として評価できる。'},
+   {at:'21:55',g:4450,bb:17,rb:17,invest:12000,hold:30,stance:'maybe',lesson:'650GでBB1・RB0。REGは約1/262まで悪化したが、まだ一定の根拠がある。期待値だけでなく残り50分と他候補の有無を考える。'},
+   {at:'22:20',g:4750,bb:18,rb:17,invest:15000,hold:63,stance:'maybe',lesson:'REG約1/279、合算約1/136。情報は弱まっている。続行も撤退も検討余地があるため、確信度と残り時間を明示して判断する。'}
+ ]},
+ {id:'p02',machine:'gogo',title:'ゴージャグの4・5をどこまで評価する？',reasons:['rb','balance','time'],stages:[
+   {at:'20:50',g:3200,bb:15,rb:14,stance:'yes',lesson:'REG約1/229、合算約1/110。強い履歴だが、設定6断定はできない。'},
+   {at:'21:45',g:3800,bb:15,rb:15,invest:14000,hold:26,stance:'yes',lesson:'REG約1/253、合算約1/127。4・5を含めて考えられ、残り1時間なら他台探索の機会費用も考慮する。'},
+   {at:'22:20',g:4200,bb:16,rb:16,invest:17000,hold:37,stance:'yes',lesson:'REG・BBともに1/263、合算1/131。強烈ではないが、ゴージャグ3の設定4相当の数字に近い。残り25分の移動は効率が悪い可能性。'}
+ ]},
+ {id:'p03',machine:'neo',title:'REGの強さを維持できるか',reasons:['rb','sample'],stages:[
+   {at:'20:55',g:4500,bb:19,rb:19,stance:'yes',lesson:'REG約1/237、BB約1/237。ネオアイムの高設定候補として強い。'},
+   {at:'22:05',g:5250,bb:21,rb:20,invest:7000,hold:29,stance:'yes',lesson:'REG約1/263、合算約1/128。5・6に近い挙動が累計で残っている。短期の不発だけで切らない。'},
+   {at:'22:35',g:5600,bb:22,rb:21,invest:9000,hold:52,stance:'yes',lesson:'REG約1/267。追加の当選で累計データはなお良好。残り時間と店の遊技終了時刻は確認する。'}
+ ]},
+ {id:'p04',machine:'my',title:'BIG連打にREGが追いつかない',reasons:['rb','balance','time'],stages:[
+   {at:'20:50',g:5000,bb:23,rb:21,stance:'yes',lesson:'REG約1/238で、BBも良好なマイV。初動として有力。'},
+   {at:'22:00',g:5750,bb:27,rb:21,invest:1000,hold:162,stance:'yes',lesson:'BIGが増えてREGは1/274まで低下。ただし合算1/120、BBも強い。REGの悪化だけで即撤退はしない。'},
+   {at:'22:40',g:6250,bb:28,rb:23,invest:5000,hold:195,stance:'yes',lesson:'REG1/272、合算約1/123。最終段階では閉店まで残り5分。実際には取り切れないリスクも確認する。'}
+ ]},
+ {id:'p05',machine:'gogo',title:'弱まるREGと終了時刻',reasons:['rb','time','balance'],stages:[
+   {at:'20:55',g:4800,bb:21,rb:21,stance:'yes',lesson:'REG約1/229で高設定を疑えるデータ。'},
+   {at:'22:00',g:5450,bb:22,rb:21,invest:12000,hold:30,stance:'yes',lesson:'REG1/260、合算1/127。高設定寄りの根拠を保っており、45分しかないなら移動コストを重く見る判断も妥当。'},
+   {at:'22:40',g:5900,bb:24,rb:22,invest:12000,hold:95,stance:'yes',lesson:'REG約1/268。閉店まで5分しかないため、実際の終了方法を前提に次のゲームを判断する。'}
+ ]},
+ {id:'p06',machine:'my',title:'REGが止まり続けるケース',reasons:['rb','sample'],stages:[
+   {at:'20:55',g:3500,bb:15,rb:14,stance:'yes',lesson:'3,500GでREG1/250は良い。BBも概ね高設定を否定しない。'},
+   {at:'21:55',g:4150,bb:16,rb:14,invest:12000,hold:30,stance:'maybe',lesson:'REG約1/296、合算約1/138まで低下。高設定の根拠が以前より弱まり、時間効率と照合したい局面。'},
+   {at:'22:40',g:4700,bb:17,rb:14,invest:21000,hold:41,stance:'no',lesson:'REG約1/336、合算約1/152。マイVでは高設定期待度がさらに下がる。ここまでの投資額は取り戻すための理由にしない。'}
+ ]},
+ {id:'p07',machine:'neo',title:'REG先行が落ち着いてきた',reasons:['rb','sample'],stages:[
+   {at:'20:55',g:2800,bb:10,rb:13,stance:'yes',lesson:'REG約1/215は強く、着席候補になる。'},
+   {at:'21:55',g:3480,bb:12,rb:13,invest:7000,hold:17,stance:'maybe',lesson:'REG約1/268。高設定らしさは少し落ちたが、まだ候補の範囲。'},
+   {at:'22:25',g:3800,bb:13,rb:14,invest:8000,hold:30,stance:'yes',lesson:'REG約1/271、合算1/141。ネオアイムでは設定5・6以外の可能性も十分残るため、断定ではなく幅を持って判断。'}
+ ]},
+ {id:'p08',machine:'gogo',title:'2,000G台での過信に注意',reasons:['rb','sample'],stages:[
+   {at:'20:55',g:2200,bb:9,rb:9,stance:'maybe',lesson:'REG約1/244と悪くないが2,200G。低設定の誤爆を疑う余地は残る。'},
+   {at:'21:50',g:2800,bb:11,rb:10,invest:3000,hold:24,stance:'maybe',lesson:'REG1/280、合算1/133。初期より設定4以上の根拠は弱まり、迷う場面。'},
+   {at:'22:20',g:3150,bb:12,rb:10,invest:7000,hold:43,stance:'no',lesson:'REG1/315、合算1/143。残り25分、見込みが弱い台を積極的に追う価値は小さい。'}
+ ]},
+ {id:'p09',machine:'my',title:'サンプルの厚いREG優勢',reasons:['rb','sample','time'],stages:[
+   {at:'20:55',g:6100,bb:21,rb:22,stance:'yes',lesson:'REG約1/277で、6,000G超のデータ。BBは弱めだが候補に残せる。'},
+   {at:'21:35',g:6550,bb:22,rb:23,invest:5000,hold:42,stance:'yes',lesson:'REG約1/285。長い履歴があり、微小な上下で設定推測を変えすぎない。'},
+   {at:'22:00',g:6820,bb:23,rb:23,invest:7000,hold:65,stance:'maybe',lesson:'REG約1/297、合算約1/148。高設定の確信は弱まる。撤退ラインは求める時間あたりの期待値次第。'}
+ ]},
+ {id:'p10',machine:'neo',title:'BIGが弱くてもREGは残る',reasons:['rb','balance'],stages:[
+   {at:'20:55',g:3700,bb:13,rb:16,stance:'yes',lesson:'REG約1/231は強い。BIGは弱いがネオアイムではREGを重く見たい。'},
+   {at:'21:55',g:4300,bb:15,rb:17,invest:3000,hold:24,stance:'yes',lesson:'REG約1/253、合算約1/134。ネオアイムの高設定を引き続き検討できる。'},
+   {at:'22:25',g:4620,bb:16,rb:17,invest:6000,hold:33,stance:'maybe',lesson:'REG約1/272、合算1/140。5・6の可能性を残すが、4以下との識別が難しくなっている。'}
+ ]}
+];
+
+const COMPARE_CASES = [
+ {id:'c01',title:'素直なマイ、BIG偏重のネオ、浅めのゴー',at:'20:55',
+  candidates:[{machine:'my',g:4250,bb:17,rb:17},{machine:'neo',g:5600,bb:27,rb:17},{machine:'gogo',g:2450,bb:9,rb:11}],
+  preferred:'A',reasons:['rb','rate'],lesson:'ネオアイムはBIG先行だがREGが弱い。ゴーは短めの良履歴。マイはBB・REGともに揃い、高設定時の出玉率も魅力。ただしホールの設定配分で順位は変わる。'},
+ {id:'c02',title:'REGが強い3台を比較',at:'21:00',
+  candidates:[{machine:'my',g:6200,bb:19,rb:24},{machine:'gogo',g:5200,bb:22,rb:20},{machine:'neo',g:4400,bb:14,rb:20}],
+  preferred:'C',alternates:['B'],reasons:['rb','balance'],lesson:'ネオはREG1/220が大きい。ゴーもバランス良好で対抗。マイはREGが強くてもBIG欠損が重く、合算や機種ごとの配当を考える必要がある。'},
+ {id:'c03',title:'見た目の合算に騙されるな',at:'20:50',
+  candidates:[{machine:'gogo',g:3800,bb:15,rb:15},{machine:'my',g:5000,bb:19,rb:16},{machine:'neo',g:4800,bb:23,rb:12}],
+  preferred:'A',reasons:['rb','balance'],lesson:'ゴーはREG・BBが1/253で整っている。ネオはBIGの多さに対しREGが弱い。マイはBB・REGとも極端な弱さではないが、ゴーの方がこの教材では優先。'},
+ {id:'c04',title:'短い突出データと長い堅実データ',at:'20:55',
+  candidates:[{machine:'my',g:900,bb:4,rb:7},{machine:'my',g:3600,bb:17,rb:14},{machine:'my',g:5000,bb:24,rb:12}],
+  preferred:'B',alternates:['A'],reasons:['sample','rb'],lesson:'AのREGは突出しているが900Gしかなく不確実性が大きい。Bは3,600GでREG約1/257、BBも良い。Aを選ぶなら試行数リスクを自覚する。'},
+ {id:'c05',title:'どれも手を出さない勇気',at:'21:10',
+  candidates:[{machine:'neo',g:2300,bb:12,rb:4},{machine:'my',g:2600,bb:14,rb:5},{machine:'gogo',g:3100,bb:13,rb:5}],
+  preferred:'skip',reasons:['rb','balance'],lesson:'3台ともBIGが良く見えてもREGが乏しい。消去法で座らず「全部見送る」を選択肢として持つ。'},
+ {id:'c06',title:'出玉率が異なる3機種',at:'20:50',
+  candidates:[{machine:'my',g:5900,bb:15,rb:23},{machine:'gogo',g:5600,bb:22,rb:21},{machine:'neo',g:5200,bb:20,rb:20}],
+  preferred:'B',alternates:['C'],reasons:['balance','rate'],lesson:'マイはREGに強みがあるがBBの大きな欠損があり、ゴー・ネオはバランス良好。機種ごとの出玉率と設定別確率が違うことに注意。'},
+ {id:'c07',title:'サンプルが少ないほど派手に見える',at:'20:55',
+  candidates:[{machine:'neo',g:1400,bb:7,rb:8},{machine:'neo',g:4300,bb:19,rb:15},{machine:'neo',g:6000,bb:24,rb:16}],
+  preferred:'A',alternates:['B'],reasons:['rb','sample'],lesson:'Aは試行数が少ないがREG1/175と非常に目立つ。Bは十分な試行数とREG1/287。どちらを選ぶかは短期誤爆をどう評価するかでも変わり、CはREGが弱い。'},
+ {id:'c08',title:'どの台も良いとき、何を優先する？',at:'20:55',
+  candidates:[{machine:'my',g:4100,bb:16,rb:16},{machine:'gogo',g:6100,bb:27,rb:23},{machine:'neo',g:6500,bb:29,rb:25}],
+  preferred:'A',alternates:['C','B'],reasons:['rb','rate'],lesson:'3台とも検討に値する。AはマイでBB・REGとも約1/256。B/Cは長期の試行数があり、相対的な設定配分や機種ごとの出玉率を考慮すると順位が変わり得る。'}
+];
+
+const CASE_MODES = {
+  seat:{label:'着席判断',sub:'まず、座る理由をつくる。',en:'01 / SIT OR SKIP',count:SEAT_CASES.length,steps:1},
+  progress:{label:'経過判断',sub:'打ちながら考えを更新する。',en:'02 / STAY OR LEAVE',count:PROGRESS_CASES.length,steps:3},
+  compare:{label:'台比較',sub:'複数の候補から優先する。',en:'03 / PICK ONE',count:COMPARE_CASES.length,steps:1}
+};
+
+const CASES = {seat:SEAT_CASES,progress:PROGRESS_CASES,compare:COMPARE_CASES};
+
+</script>
+  <script>
+(() => {
+'use strict';
+
+const KEY = 'after-nine-trainer-v1';
+const PRIOR = {
+  equal: [1,1,1,1,1,1],
+  low: [45,25,15,9,5,1]
+};
+const STANCE = {yes:'○',maybe:'△',no:'×'};
+const STANCE_SHORT = {yes:'着席・続行',maybe:'条件次第',no:'見送り・撤退'};
+const app = document.getElementById('app');
+const toastElement = document.getElementById('toast');
+let toastTimeout;
+
+function cleanStore(value){
+  if (!value || typeof value !== 'object') return {answers:{},done:[]};
+  return {
+    answers:(value.answers && typeof value.answers === 'object' && !Array.isArray(value.answers)) ? value.answers : {},
+    done:Array.isArray(value.done) ? value.done.filter(v => typeof v === 'string') : []
+  };
+}
+function loadStore(){try{return cleanStore(JSON.parse(localStorage.getItem(KEY)));}catch{return cleanStore(null);}}
+const store = loadStore();
+const state = {route:'home',mode:'seat',index:0,stage:0,choice:null,reason:null,submitted:false,prior:'equal'};
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch{/* localStorage may be unavailable in a file preview */}}
+function totalCases(){return SEAT_CASES.length+PROGRESS_CASES.length+COMPARE_CASES.length;}
+function fmt(n){return Number(n).toLocaleString('ja-JP');}
+function pct(n){return (n*100).toFixed(1)+'%';}
+function odds(g,n){return n>0 ? `1/${Math.round(g/n).toLocaleString('ja-JP')}` : '—';}
+function summaryStats(){
+  const answers=Object.values(store.answers).filter(v => v && typeof v === 'object');
+  return {
+    done:store.done.length,
+    decisions:answers.length,
+    aligned:answers.filter(a => a.aligned).length,
+    reason:answers.filter(a => a.goodReason).length,
+    matchRate:answers.length?Math.round(answers.filter(a => a.aligned).length*100/answers.length):null,
+    reasonRate:answers.length?Math.round(answers.filter(a => a.goodReason).length*100/answers.length):null
+  };
+}
+function countDone(mode){return CASES[mode].filter(c => store.done.includes(c.id)).length;}
+function getCase(){return CASES[state.mode][state.index];}
+function getSnapshot(){const c=getCase();return state.mode==='progress'?c.stages[state.stage]:c;}
+function responseKey(){const c=getCase();return state.mode==='progress'?`${c.id}:${state.stage}`:c.id;}
+function renderNav(){document.querySelectorAll('[data-action="home"], [data-action="learn"], [data-action="results"]').forEach(b=>{b.classList.toggle('active', b.dataset.action===state.route);});}
+function focusScroll(){window.scrollTo({top:0,behavior:'instant'});}
+function go(route){state.route=route;state.submitted=false;state.choice=null;state.reason=null;render();focusScroll();}
+function startMode(mode, retry=false){
+  if(!CASES[mode])return;
+  if(retry){
+    CASES[mode].forEach(c=>{store.done=store.done.filter(id=>id!==c.id);Object.keys(store.answers).forEach(k=>{if(k===c.id || k.startsWith(c.id+':'))delete store.answers[k];});});
+    persist();
+  }
+  state.mode=mode;
+  const first=CASES[mode].findIndex(c=>!store.done.includes(c.id));
+  state.index=first<0?CASES[mode].length:first;
+  state.stage=0;state.submitted=false;state.choice=null;state.reason=null;
+  state.route=state.index===CASES[mode].length?'finish':'quiz';render();focusScroll();
+}
+function bestPriorResult(machine,g,bb,rb,priorKey='equal'){
+  const s=SPECS[machine];const prior=PRIOR[priorKey]||PRIOR.equal;
+  if(!s || g<bb+rb || g<=0) return null;
+  const logs=s.bb.map((x,i)=>{
+    const pb=1/x,pr=1/s.rb[i];
+    return Math.log(prior[i])+bb*Math.log(pb)+rb*Math.log(pr)+(g-bb-rb)*Math.log(1-pb-pr);
+  });
+  const maximum=Math.max(...logs);const weights=logs.map(v=>Math.exp(v-maximum));const sum=weights.reduce((a,b)=>a+b,0);
+  const prob=weights.map(v=>v/sum);
+  const p456=prob.slice(3).reduce((a,b)=>a+b,0);
+  const output=prob.reduce((a,p,i)=>a+p*s.payout[i],0);
+  return {prob,p456,output};
+}
+function showToast(message){clearTimeout(toastTimeout);toastElement.textContent=message;toastElement.hidden=false;toastTimeout=setTimeout(()=>{toastElement.hidden=true;},3500);}
+function shareLink(){
+  if(location.protocol==='file:')return showToast('公開後のURLをLINEで共有できます。いまはファイル版です。');
+  const url=location.href.split('#')[0];
+  if(navigator.share){navigator.share({title:'AFTER NINE｜判断トレーナー',text:'ジャグラーの台選びを練習してみよう',url}).catch(()=>{});return;}
+  if(navigator.clipboard?.writeText){navigator.clipboard.writeText(url).then(()=>showToast('URLをコピーしました。LINEで送れます。')).catch(()=>showToast(url));return;}
+  showToast('URL: '+url);
+}
+function shareProgress(){
+ const s=summaryStats();
+ const byMode=Object.keys(CASES).map(id=>`${CASE_MODES[id].label}: ${countDone(id)}/${CASES[id].length}`).join(' / ');
+ const readable=Object.entries(store.answers).sort(([a],[b])=>a.localeCompare(b)).map(([id,a])=>{
+   const choice= ['yes','maybe','no'].includes(a.choice)?STANCE[a.choice]:(a.choice==='skip'?'全台見送り':a.choice);
+   const why=REASONS.find(r=>r.id===a.reason)?.label||'—';
+   return `${id} ${choice} / ${why}`;
+ }).join('\n');
+ const message=`AFTER NINE｜学習結果\n完了 ${s.done}/${totalCases()}ケース\n${byMode}\n参考判断一致 ${s.matchRate===null?'—':s.matchRate+'%'} / 理由の着眼点 ${s.reasonRate===null?'—':s.reasonRate+'%'}\n\n【回答履歴】\n${readable||'まだ回答がありません'}\n\n※一致率は教材の参考スタンスとの比較であり、設定的中率や勝率ではありません。`;
+ if(navigator.share){navigator.share({title:'AFTER NINE｜学習結果',text:message}).catch(()=>{});return;}
+ if(navigator.clipboard?.writeText){navigator.clipboard.writeText(message).then(()=>showToast('学習結果をコピーしました。LINEに貼り付けられます。')).catch(()=>window.prompt('学習結果をコピーしてください',message));return;}
+ window.prompt('学習結果をコピーしてください',message);
+}
+function answerChoices(isProgressFollow=false){
+ const options = isProgressFollow ? [
+  ['yes','○','続行する','まだ打つ価値がある'],
+  ['maybe','△','条件次第','他候補や残り時間と比較'],
+  ['no','×','撤退する','今のデータでは見送る']
+ ] : [
+  ['yes','○','着席する','この台を選ぶ'],
+  ['maybe','△','条件次第','比較・検討の余地がある'],
+  ['no','×','見送る','条件が合わない']
+ ];
+ return `<div class="option-stack" role="group" aria-label="行動の選択">${options.map(([id,mark,name,desc])=>`<button type="button" data-action="choose" data-choice="${id}" aria-pressed="${state.choice===id}" class="option-button ${state.choice===id?'selected':''}"><span class="option-symbol" aria-hidden="true">${mark}</span><span class="option-copy"><strong>${name}</strong><small>${desc}</small></span></button>`).join('')}</div>`;
+}
+function reasonChoices(){return `<div class="reason-grid" role="group" aria-label="最も重視した判断材料">${REASONS.map(r=>`<button type="button" data-action="reason" data-reason="${r.id}" aria-pressed="${state.reason===r.id}" class="reason-chip ${state.reason===r.id?'selected':''}">${r.label}</button>`).join('')}</div>`;}
+function submitButton(){return `<button type="button" class="button button-dark answer-submit" data-action="submit" ${(!state.choice||!state.reason)?'disabled':''}>回答して解説を見る <span class="arrow" aria-hidden="true">→</span></button>`;}
+function renderBoard(machine,point,previous){
+ const s=SPECS[machine], stageDelta=previous ? ` <div class="delta-bar"><span>追加 +${fmt(point.g-previous.g)}G</span><span>BB +${point.bb-previous.bb}</span><span>RB +${point.rb-previous.rb}</span></div>`:'';
+ const wallet = Number.isFinite(point.invest) ? `<div class="wallet-strip"><div><small>現金投資</small><strong>${fmt(point.invest)}円</strong></div><div><small>所持枚数</small><strong>${fmt(point.hold)}枚</strong></div><div><small>現在差枚（概算）</small><strong class="${point.hold-point.invest*46/1000>=0?'positive':'negative'}">${point.hold-point.invest*46/1000>0?'+':''}${Math.round(point.hold-point.invest*46/1000)}枚</strong></div></div>`:'';
+ return `<div class="quiz-visual machine-${machine}"><div class="quiz-visual-inner">
+ <div class="game-head"><span class="machine-tag">${s.short}</span><span class="time-pill">● ${point.at} <span style="opacity:.65">/ CLOSE 22:45</span></span></div>
+ <div class="machine-name">${s.name}</div><div class="data-caption">TOTAL GAME COUNT</div>
+ <div class="game-number">${fmt(point.g)}<span>G</span></div><div class="data-separator"></div>
+ <div class="rate-grid"><div class="rate-block"><div class="rate-label">BIG</div><div class="rate-value">${point.bb}<span> 回</span></div><div class="rate-sub">${odds(point.g,point.bb)}</div></div>
+ <div class="rate-block"><div class="rate-label">REG</div><div class="rate-value">${point.rb}<span> 回</span></div><div class="rate-sub">${odds(point.g,point.rb)}</div></div>
+ <div class="rate-block"><div class="rate-label">合算</div><div class="rate-value">${(point.g/(point.bb+point.rb)).toFixed(0)}<span> G</span></div><div class="rate-sub">${odds(point.g,point.bb+point.rb)}</div></div></div>
+ ${stageDelta}${wallet}
+ <div class="timeline-note"><strong>LOOK AT THE WHOLE DATA.</strong><br>累計履歴から判断。結果や前任者の差枚だけで設定は決められません。</div>
+ </div></div>`;
+}
+function renderHome(){
+ const stats=summaryStats();
+ return `<div class="shell page">
+  <section class="hero" aria-labelledby="hero-title"><div class="hero-content">
+   <div class="eyebrow"><span class="dot"></span> 20:55 — 22:45 / DECISION TRAINING</div>
+   <h1 id="hero-title">台を読む。<br><em>次の一手</em>を選ぶ。</h1>
+   <p>REG、BIG、総ゲーム数。数字の先にある判断力を鍛えよう。着席から閉店まで、実戦に近いケースで練習。</p>
+   <div class="hero-cta"><button class="button button-primary" data-action="start" data-mode="seat">トレーニングを始める <span class="arrow" aria-hidden="true">↗</span></button><span class="hero-note">無料 · ログイン不要 · 3機種対応</span></div>
+  </div><div class="hero-visual" aria-hidden="true"><div class="visual-dots"></div><div class="visual-circle"><span class="visual-number">21</span><span class="visual-tick"></span></div><span class="visual-caption">READ THE ODDS.<br>OWN THE DECISION.</span></div></section>
+  <div class="overview"><section><div class="section-top"><h2>トレーニングを選ぶ</h2><span class="micro">3 MODES / ${totalCases()} CASES</span></div>
+   <div class="mode-list">
+   ${modeCard('seat','01','◯',stats)}${modeCard('progress','02','↗',stats)}${modeCard('compare','03','≋',stats)}
+   </div>
+  </section><aside class="sidebar-card"><div class="sidebar-head"><span>あなたの学習進捗</span><span>PROGRESS</span></div>
+  <div class="progress-score"><strong>${stats.done}</strong><span> / ${totalCases()} ケース</span></div>
+  <div class="track"><span style="width:${(stats.done/totalCases()*100).toFixed(1)}%"></span></div>
+  <div class="sidebar-sub">学習内容はこの端末に保存。途中から再開できます。</div><div class="sidebar-rule"></div>
+  <div class="sidebar-small">判断した回数</div><div class="sidebar-big">${fmt(stats.decisions)} <span style="font-size:12px;color:var(--muted)">回</span></div>
+  <button data-action="results" class="side-footer-link">学習記録を見る <span class="arrow" aria-hidden="true">→</span></button></aside></div>
+  <section class="intro-strip" aria-label="学習の基本方針">
+   <div class="intro-item"><span class="intro-star" aria-hidden="true">✳</span><div><strong>結果で採点しない</strong><p>勝った・負けたではなく、判断時点の根拠を評価。</p></div></div>
+   <div class="intro-item"><span class="intro-star" aria-hidden="true">✳</span><div><strong>絶対の正解はない</strong><p>公表スペックからのモデル評価と実戦の参考判断を比較。</p></div></div>
+   <div class="intro-item"><span class="intro-star" aria-hidden="true">✳</span><div><strong>お金を使わず練習</strong><p>問題は架空データ。実際の収益や設定は保証しません。</p></div></div>
+  </section>
+ </div>`;
+}
+function modeCard(id,number,icon){const m=CASE_MODES[id];const d=countDone(id);return `<button type="button" data-action="start" data-mode="${id}" class="mode-card"><span class="mode-number">${number}</span><span class="mode-icon" aria-hidden="true">${icon}</span><span class="mode-copy"><strong>${m.label}</strong><span>${m.sub}</span></span><span class="mode-extra"><span class="mode-count">${d} / ${m.count} COMPLETE</span><span class="mode-arrow" aria-hidden="true">↗</span></span></button>`;}
+function renderQuiz(){
+ if(!getCase())return renderFinish();
+ const mode=state.mode,c=getCase(),point=getSnapshot();
+ const total=CASES[mode].length,progress=(state.index+(mode==='progress'?(state.stage/3):0))/total*100;
+ const title = mode==='progress' ? `経過判断シミュレーション ${String(state.index+1).padStart(2,'0')}` : `着席判断トレーニング ${String(state.index+1).padStart(2,'0')}`;
+ const question = mode==='progress'&&state.stage>0?'現在の履歴で、続行する？':'この台が空いていたら、座る？';
+ return `<div class="shell page"><div class="quiz-shell"><div class="quiz-top"><button class="back" type="button" data-action="home">← トップへ戻る</button><span class="step-count">${CASE_MODES[mode].label} &nbsp; <strong>${String(state.index+1).padStart(2,'0')}</strong> / ${String(total).padStart(2,'0')}</span></div>
+ <div class="quiz-progress"><span style="width:${progress.toFixed(2)}%"></span></div>
+ ${mode==='compare'?renderCompare(c):`<div class="stage-strip"><span class="stage-pill">${mode==='progress'?`STAGE ${state.stage+1} / ${c.stages.length}`:'着席判断'}</span><span>${mode==='progress'?'各時点で推測を更新。途中結果で過去の判断は採点しません。':'20:55ごろ・46枚等価・ブドウ/設定示唆なし'}</span></div>
+ <h1 class="quiz-title">${title}</h1>
+ <div class="quiz-two-col"><div>${renderBoard(c.machine,point,mode==='progress'&&state.stage>0?c.stages[state.stage-1]:null)}</div>
+ <section class="answer-panel"><span class="question-eyebrow">YOUR DECISION / ${point.at}</span><h2>${question}</h2><p class="question-description">設定期待度と、22:45までの残り時間を考慮して選んでください。</p>
+ ${answerChoices(mode==='progress'&&state.stage>0)}
+ <div class="answer-label">最も重視した判断材料は？</div>${reasonChoices()}${submitButton()}
+ <p class="quick-hint">回答後に参考スタンスと統計モデルを比較できます。</p></section></div>`}
+ </div></div>`;
+}
+function renderCompare(c){return `<div class="compare-wrapper"><div class="compare-head"><span class="question-eyebrow">PICK THE BEST / ${c.at}</span><h2>3台から選ぶ</h2><p>空き台が3台。今この時間から、どれを優先する？ すべて見送ってもOK。</p></div>
+ <div class="compare-grid" role="group" aria-label="候補台の選択">
+ ${c.candidates.map((item,i)=>{
+ const letter='ABC'[i];return `<button class="compare-card ${state.choice===letter?'selected':''}" type="button" data-action="choose" data-choice="${letter}" aria-pressed="${state.choice===letter}"><div class="compare-card-head"><span class="candidate-letter">${letter}</span></div><div class="candidate-machine">${SPECS[item.machine].name}</div><div class="candidate-g">${fmt(item.g)}<span>G</span></div><div class="candidate-nums"><span>BB ${item.bb}</span><span>RB ${item.rb}</span></div><div class="candidate-rates">BB ${odds(item.g,item.bb)} ・ REG ${odds(item.g,item.rb)}<br>合算 ${odds(item.g,item.bb+item.rb)}</div></button>`;
+ }).join('')}</div><div class="compare-controls"><div><div class="answer-label">選ばない、という判断もあり。</div><button type="button" data-action="choose" data-choice="skip" aria-pressed="${state.choice==='skip'}" class="skip-button ${state.choice==='skip'?'selected':''}">×　3台とも見送る</button><div class="answer-label">最も重視した判断材料は？</div>${reasonChoices()}</div><div class="compare-actions"><div class="answer-label">選択中：${state.choice ? state.choice==='skip'?'全台見送り':`候補 ${state.choice}`:'まだ選択していません'}</div>${submitButton()}<p class="quick-hint">モデル推定値は参考。機種別の設定配分で順位は変わります。</p></div></div></div>`;}
+function getJudgement(){const c=getCase(),point=getSnapshot();const ref=state.mode==='compare'?c.preferred:point.stance;
+ const acceptable=state.mode==='compare'?(c.alternates||[]):ref==='maybe'?['yes','no']:['maybe'];
+ const exact=state.choice===ref,close=acceptable.includes(state.choice);
+ return {ref,exact,close,goodReason:c.reasons.includes(state.reason),resultLabel:exact?'参考判断と一致':close?'別の見方も成立':'参考判断と異なる',chosenLabel:state.mode==='compare'?(state.choice==='skip'?'全台見送り':`候補 ${state.choice}`):(STANCE[state.choice]+' '+STANCE_SHORT[state.choice]),refLabel:state.mode==='compare'?(ref==='skip'?'全台見送り':`候補 ${ref}`):(STANCE[ref]+' '+STANCE_SHORT[ref])};
+}
+function submit(){if(!state.choice||!state.reason||state.submitted)return;
+ const j=getJudgement();store.answers[responseKey()]={choice:state.choice,reason:state.reason,aligned:j.exact,close:j.close,goodReason:j.goodReason,at:new Date().toISOString()};persist();
+ if(state.mode!=='progress'||state.choice==='no'||state.stage===getCase().stages.length-1)markDone();
+ state.submitted=true;render();focusScroll();}
+function markDone(){const c=getCase();if(!store.done.includes(c.id))store.done.push(c.id);persist();}
+function next(){const c=getCase();
+ if(state.mode==='progress'&&state.choice!=='no'&&state.stage<c.stages.length-1){state.stage++;state.choice=null;state.reason=null;state.submitted=false;render();focusScroll();return;}
+ markDone();state.index++;state.stage=0;state.choice=null;state.reason=null;state.submitted=false;
+ state.route=state.index>=CASES[state.mode].length?'finish':'quiz';render();focusScroll();}
+function modelHtml(machine,point){const model=bestPriorResult(machine,point.g,point.bb,point.rb,state.prior);if(!model)return '';
+ return `<div class="card-kicker">PROBABILITY MODEL / REFERENCE</div><h3>設定分布の参考計算</h3>
+ <div class="prior-toggle" role="group" aria-label="設定配分の仮定"><button type="button" class="${state.prior==='equal'?'active':''}" data-action="prior" data-prior="equal" aria-pressed="${state.prior==='equal'}">全設定を均等と仮定</button><button type="button" class="${state.prior==='low'?'active':''}" data-action="prior" data-prior="low" aria-pressed="${state.prior==='low'}">低設定多めと仮定</button></div>
+ <div class="model-overview"><div class="model-big"><small>設定4・5・6の合計</small><strong>${pct(model.p456)}</strong><span class="hint">指定した配分の仮定のもとで計算</span></div><div class="model-big"><small>出玉率の加重平均（参考）</small><strong>${model.output.toFixed(2)}<span>%</span></strong><span class="hint">実際の期待機械割を保証しない</span></div></div>
+ ${model.prob.map((n,i)=>`<div class="posterior-row ${i>=3?'high':''}"><span class="posterior-label">設定${i+1}</span><div class="posterior-track"><span style="width:${(n*100).toFixed(2)}%"></span></div><span class="posterior-pct">${pct(n)}</span></div>`).join('')}
+ <div class="model-box">${state.prior==='equal'?'全設定が同じ割合で投入されるという、比較用の仮定です。':'設定1〜6の事前配分を45 / 25 / 15 / 9 / 5 / 1%と置く仮定です。実店舗の配分ではありません。'}<br>BB・RBと総Gから算出した理論上の比較で、ブドウ確率・店の投入傾向・空き台になる事情などは含みません。</div>`;
+}
+function compareModelHtml(c){let rows=c.candidates.map((p,i)=>({letter:'ABC'[i],name:SPECS[p.machine].name,model:bestPriorResult(p.machine,p.g,p.bb,p.rb,state.prior)}));return `<div class="card-kicker">PROBABILITY MODEL / REFERENCE</div><h3>3台の統計モデル比較</h3>
+ <div class="prior-toggle" role="group" aria-label="設定配分の仮定"><button type="button" data-action="prior" data-prior="equal" class="${state.prior==='equal'?'active':''}">全設定を均等と仮定</button><button type="button" data-action="prior" data-prior="low" class="${state.prior==='low'?'active':''}">低設定多めと仮定</button></div>
+ <div style="overflow-x:auto"><table class="model-table"><thead><tr><th>台</th><th>4以上（モデル）</th><th>加重出玉率</th></tr></thead><tbody>${rows.map(r=>`<tr class="${r.letter===c.preferred?'highlight':''}"><td>${r.letter} · ${r.name}</td><td>${pct(r.model.p456)}</td><td>${r.model.output.toFixed(2)}%</td></tr>`).join('')}</tbody></table></div>
+ <div class="model-box">${state.prior==='equal'?'全設定均等（各1/6）という仮定です。':'低設定多め（45 / 25 / 15 / 9 / 5 / 1%）という仮定です。'}<br>機種ごとのホール配分は同一とは限りません。加重出玉率は仮定による比較値で、実収益の推定精度を保証しません。</div>`;}
+function renderFeedback(){const c=getCase(),point=getSnapshot(),j=getJudgement(),isComp=state.mode==='compare';
+ const help=isComp?c.lesson:point.lesson;
+ const reasonText=REASONS.find(r=>r.id===state.reason)?.label||'';
+ const headline=j.exact?'判断の軸が揃っています':j.close?'判断が割れる、学びどころ':'判断の理由を比べてみよう';
+ const referenceNote = isComp?'候補選択は教材用の参考順位。ほかの候補にも合理性が残る場合があります。':'参考スタンスは教材用の目安。○×の正解や実際の設定を意味しません。';
+ return `<div class="shell page"><div class="feedback-shell"><div class="quiz-top"><button class="back" type="button" data-action="home">← トップへ戻る</button><span class="step-count">${CASE_MODES[state.mode].label} &nbsp; ${String(state.index+1).padStart(2,'0')} / ${String(CASES[state.mode].length).padStart(2,'0')}</span></div>
+ <div class="feedback-banner"><span class="feedback-symbol" aria-hidden="true">${j.exact?'✓':j.close?'≋':'↗'}</span><div><span class="eyebrow">DECISION REVIEW</span><h2>${headline}</h2><p>${referenceNote}</p></div></div>
+ <div class="feedback-layout"><div class="paper-card"><div class="card-kicker">WHY / 判断の根拠</div><h3>${isComp?c.title:state.mode==='progress'?c.title:c.title}</h3>
+ <div class="feedback-choices"><div class="choice-summary"><small>あなたの判断</small><strong>${j.chosenLabel}</strong></div><div class="choice-summary"><small>教材の参考判断</small><strong>${j.refLabel}</strong></div></div>
+ <div class="insight"><span class="insight-mark">01</span><span>${help}</span></div>
+ <div class="insight"><span class="insight-mark">02</span><span><strong>選んだ理由：</strong>${reasonText}。${j.goodReason?'今回の主要な着眼点の一つです。':'今回も参考にはなりますが、まずは'+REASONS.filter(r=>c.reasons.includes(r.id)).map(r=>r.label).slice(0,2).join('・')+'を確認したい場面です。'}</span></div>
+ <div class="insight"><span class="insight-mark">03</span><span>途中の勝ち負けは設定そのものを変えません。収支はリスク管理の材料、ボーナス履歴は設定推測の材料として区別しましょう。</span></div>
+ <p class="model-note" style="margin-top:14px">正解を暗記するためのテストではなく、判断の根拠を比較するための教材です。</p>
+ </div><div class="paper-card">${isComp?compareModelHtml(c):modelHtml(c.machine,point)}</div></div>
+ <div class="feedback-next"><span class="feedback-next-note">${state.mode==='progress'&&state.choice==='no'?'撤退したので、このシナリオはここで終了。':'今後の展開を見て、いまの判断の正しさを後付けで決めないことが大切。'}</span><button type="button" class="button button-primary" data-action="next">${state.mode==='progress'&&state.choice!=='no'&&state.stage<c.stages.length-1?'次の状況を見る':'次の問題へ進む'} <span class="arrow" aria-hidden="true">→</span></button></div>
+ </div></div>`;
+}
+function renderFinish(){const m=CASE_MODES[state.mode],d=countDone(state.mode);return `<div class="shell page"><section class="finish-wrap"><div class="finish-symbol" aria-hidden="true">✓</div><span class="interior-eyebrow">SESSION COMPLETE</span><h1>${m.label}をひと通り学習！</h1><p>${d} / ${m.count} ケースを完了しました。判断の結果だけでなく、使った根拠を振り返ってみよう。<br>別のモードへ進むか、最初から復習できます。</p><div class="finish-actions"><button class="button button-dark" type="button" data-action="results">学習記録を見る</button><button class="button button-outline" type="button" data-action="restart-mode" data-mode="${state.mode}">このモードを復習する</button><button class="button button-primary" type="button" data-action="home">ホームへ戻る <span class="arrow">→</span></button></div></section></div>`;}
+function renderLearn(){return `<div class="shell page"><div class="interior-head"><span class="interior-eyebrow">HOW TO LEARN / はじめに</span><h1>「当てる」よりも、<br>「根拠を説明できる」を目指す。</h1><p>高設定確定を目指すクイズではありません。設定推測・期待値・時間効率を区別して、自分の判断を説明するための練習です。</p></div>
+ <div class="info-grid"><section class="info-card"><span class="index">01 / DATA</span><h2>設定推測は、履歴から始まる。</h2><p>REGは設定差が大きい機種が多い一方、BIGの設定差も機種によって異なります。両方の当選回数と総ゲーム数を、セットで見ましょう。</p><p>少ないGでREGが突出していても、低設定の上振れは残ります。試行回数を増やせば情報量は増えますが、設定が確定するわけではありません。</p></section>
+ <section class="info-card"><span class="index">02 / DECISION</span><h2>「推測」と「座る価値」を分ける。</h2><p>高設定の可能性があっても、その機種の出玉率・残り時間・移動コスト・許容できる損失によっては見送る判断もあります。</p><p>すでに打った枚数や勝った枚数で、次のゲームの抽選確率が変わるわけではありません。</p></section>
+ <section class="info-card"><span class="index">03 / UPDATE</span><h2>経過で、判断を更新する。</h2><p>途中経過を見たら、現在の累計BB・REG・総Gで再評価します。直近のハマりだけを過大評価しないことが大切です。</p><p>未来の結果を知ってから過去の判断を採点しません。撤退後に出たとしても、当時の判断が間違いとは限りません。</p></section>
+ <section class="info-card"><span class="index">04 / MODEL</span><h2>表示される確率は、仮定付き。</h2><p>各設定のBB・RB公表確率を使って、当選／非当選の履歴の説明しやすさ（尤度）を比較しています。設定投入割合は不明なので、学習用の事前分布を選んで計算します。</p><span class="formula">L(s) ∝ pBB(s)^BB × pRB(s)^RB × (1 − pBB(s) − pRB(s))^(G − BB − RB)</span><p>「均等」では各設定1/6。「低設定多め」は1〜6を45 / 25 / 15 / 9 / 5 / 1%と置く<strong>説明用の仮定</strong>です。いずれもホールの実際の設定配分とは限りません。</p></section>
+ <section class="info-card full"><span class="index">SOURCE / DATA</span><h2>機種スペックの出典</h2><p>BB・RB・出玉率は、北電子の公式製品ページを参照しています。メーカー発表の出玉率は工場データに基づく予測値です。独立した非公式教材で、メーカー・ホールとは無関係です。</p><div class="source-links">${Object.values(SPECS).map(s=>`<a class="source-link" href="${s.url}" target="_blank" rel="noopener noreferrer">${s.name} <span>メーカー公式 ↗</span></a>`).join('')}</div></section>
+ </div><div class="note-banner">このサイトは判断練習用の教材です。架空のボーナス履歴を使用しており、実際の高設定・収益・勝率を保証しません。実戦では自分で決めた予算と時間の範囲で判断してください。</div>
+ </div>`;}
+function renderResults(){const s=summaryStats();return `<div class="shell page"><div class="interior-head"><span class="interior-eyebrow">YOUR TRAINING LOG</span><h1>学習記録</h1><p>この端末で解いた問題を集計しています。「一致率」は教材の参考スタンスとの一致であり、実際の勝率や設定判別的中率ではありません。</p></div>
+ <section class="stats-grid" aria-label="学習のサマリー"><div class="stat-tile"><small>完了ケース</small><strong>${s.done} <span style="font-size:13px;color:var(--muted)">/ ${totalCases()}</span></strong></div><div class="stat-tile"><small>判断した回数</small><strong>${s.decisions}</strong></div><div class="stat-tile"><small>参考スタンス一致</small><strong>${s.matchRate===null?'—':s.matchRate+'%'}</strong></div><div class="stat-tile"><small>理由の着眼点</small><strong>${s.reasonRate===null?'—':s.reasonRate+'%'}</strong></div></section>
+ <div class="stats-details"><div class="paper-card"><div class="card-kicker">BY MODE</div><h3>モード別の進捗</h3>${Object.keys(CASES).map(id=>`<div class="stats-row"><strong>${CASE_MODES[id].label}</strong><span>${countDone(id)} / ${CASES[id].length}</span></div>`).join('')}<div class="results-actions"><button class="button button-dark" data-action="home">練習を続ける <span class="arrow">→</span></button><button type="button" class="button button-outline" data-action="share-progress">回答結果をLINEで送る <span class="arrow">↗</span></button></div></div>
+ <div class="paper-card"><div class="card-kicker">WHAT IT MEANS</div><h3>成績の読み方</h3><p>参考判断と違ったケースほど、なぜ違うのかを考えてみましょう。特に△は正解／不正解よりも、判断の条件を説明できるかが重要です。</p><p>復習すると、そのモードの回答・記録は上書きされます。他のモードの履歴は残ります。</p><button class="button button-outline" type="button" data-action="reset">すべての学習記録を消去</button></div></div>
+ <div class="note-banner">保存先はこの端末のブラウザ（localStorage）です。別のスマホとの自動同期や、講師側からの成績確認はVer.1ではできません。プライベートブラウズや端末のデータ削除で記録が失われる場合があります。</div></div>`;}
+function render(){document.title='AFTER 9 — ジャグラー実戦判断トレーナー';let html;
+ switch(state.route){case'home':html=renderHome();break;case'learn':html=renderLearn();break;case'results':html=renderResults();break;case'quiz':html=state.submitted?renderFeedback():renderQuiz();break;case'finish':html=renderFinish();break;default:html=renderHome();}
+ app.innerHTML=html;renderNav();}
+
+function resetAll(){if(!confirm('この端末の学習記録をすべて削除します。よろしいですか？'))return;store.answers={};store.done=[];persist();go('results');showToast('学習記録を消去しました');}
+document.addEventListener('click',e=>{
+ const button=e.target.closest('[data-action]');if(!button)return;
+ if(button.tagName==='A')e.preventDefault();
+ const act=button.dataset.action;
+ if(act==='home'||act==='learn'||act==='results')return go(act);
+ if(act==='start')return startMode(button.dataset.mode);
+ if(act==='restart-mode')return startMode(button.dataset.mode,true);
+ if(act==='choose'&&state.route==='quiz'&&!state.submitted){state.choice=button.dataset.choice;render();app.querySelector(`[data-action="choose"][data-choice="${state.choice}"]`)?.focus({preventScroll:true});return;}
+ if(act==='reason'&&state.route==='quiz'&&!state.submitted){state.reason=button.dataset.reason;render();app.querySelector(`[data-action="reason"][data-reason="${state.reason}"]`)?.focus({preventScroll:true});return;}
+ if(act==='submit')return submit();
+ if(act==='next'&&state.submitted)return next();
+ if(act==='prior'&&state.submitted){state.prior=button.dataset.prior==='low'?'low':'equal';render();app.querySelector(`[data-action="prior"][data-prior="${state.prior}"]`)?.focus({preventScroll:true});return;}
+ if(act==='share')return shareLink();
+ if(act==='share-progress')return shareProgress();
+ if(act==='reset')return resetAll();
+});
+
+// Exposed only for offline verification; ordinary use does not need a backend.
+window.__AFTER9_TEST__={bestPriorResult,stats:summaryStats,store,go,startMode,state,submit,next,render};
+render();
+})();
+
+</script>
+</body>
+</html>
